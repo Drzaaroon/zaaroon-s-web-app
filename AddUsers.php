@@ -8,11 +8,37 @@ error_reporting(0);
 <head></head>
 <body>
 <form action="" method="POST">
-Name<input type="text" name="name" value=""/><br><br>
-Phone<input type="text" name="phone" value=""/><br><br>
-Email<input type="text" name="email" value=""/><br><br>
-Password<input type="text" name="password" value=""/><br><br>
-<input type="submit" name="submit" value="submit">
+<table>
+<tr>
+    <td>Name</td>
+    <td></td>
+    <td><input type="text" name="name" value=""/></td>
+</tr>
+
+<tr>
+    <td>Phone</td>
+    <td></td>
+    <td><input type="text" name="phone" value=""/></td>
+</tr>
+
+<tr>
+    <td>Email</td>
+    <td></td>
+    <td><input type="text" name="email" value=""/></td>
+</tr>
+
+<tr>
+    <td>Password</td>
+    <td></td>
+    <td><input type="text" name="password" value=""/></td>
+</tr>
+
+<tr>
+    <td></td>
+    <td><input type="submit" name="submit" value="submit"></td>
+    <td></td>
+</tr>
+</table>
 </form>
 <?php
 

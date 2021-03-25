@@ -1,3 +1,10 @@
+<style>
+table, th, td {
+    font-family: monospace;
+    width:max-content;
+}
+</style>
+
 <?php
 include("connection_for_update.php");
 error_reporting(0);
@@ -27,7 +34,7 @@ error_reporting(0);
 <tr>
     <td>Street Address</td>
     <td></td>
-    <td><input type="text" size="70" name="stadd" value="" placeholder="Enter street address with suburb and postcode separated by comma "/></td>
+    <td><input type="text" size="50" name="stadd" value="" placeholder="Enter street address with suburb and postcode separated by comma "/></td>
 </tr>
 
 <tr>
@@ -131,7 +138,7 @@ error_reporting(0);
     <td><select name="cnfmd" placeholder="Select Service status">
 <option value="" disable selected>Choose option</option>
 <option value="confirmed">CONFIRMED</option>
-<option value="cancelled">CENCELLED</option>
+<option value="cancelled">CANCELLED</option>
 <option value="rebooked">REBOOKED</option>
 <option value="Pending">PENDING</option>
 </select></td>
@@ -182,7 +189,7 @@ if($_POST['submit'])
             if($data)
             {
                 echo '<script>alert( "data inserted into the database successfully")</script>';
-                //header("refresh:1; url=#.php");
+                header("refresh:1; url=DisplayJobs.php");
             }
 
     }

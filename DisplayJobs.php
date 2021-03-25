@@ -1,3 +1,10 @@
+<style>
+table, th, td {
+    font-family: monospace;
+    border: 1px solid;
+}
+</style>
+
 <?php
 include("connection_for_update.php");
 error_reporting(0);
@@ -34,27 +41,30 @@ if($total!=0)
     
 <?php
 
-    while($result=mysqli_fetch_assoc($data))
-    echo "<tr>
-    <td>".$result['job_id']."</td>
-    <td>".$result['first_name']."</td>
-    <td>".$result['last_name']."</td>
-    <td>".$result['street_address']."</td>
-    <td>".$result['postcode']."</td>
-    <td>".$result['state']."</td>
-    <td>".$result['telephone']."</td>
-    <td>".$result['mobile']."</td>
-    <td>".$result['email']."</td>
-    <td>".$result['solar_panel']."</td>
-    <td>".$result['roof_height']."</td>
-    <td>".$result['service_fee']."</td>
-    <td>".$result['date_of_service']."</td>
-    <td>".$result['time_of_service']."</td>
-    <td>".$result['confirmed']."</td>
-    <td>".$result['comments']."</td>
-    <td><a href='update2.php?id=$row[id]&nm=$row[name]&pn=$row[phone]&em=$row[email]&pd=$row[password]'>Update</a></td>
-    <td><a href='delete2.php?id=$row[id]' onclick='checkdelete()'>Delete</a></td>
-</tr>";
+    while($result=mysqli_fetch_assoc($data)){ 
+        ?>
+    <tr>
+    <td><?php echo $result['job_id'];?></td>
+    <td><?php echo $result['first_name'];?></td>
+    <td><?php echo $result['last_name'];?></td>
+    <td><?php echo $result['street_address'];?></td>
+    <td><?php echo $result['postcode'];?></td>
+    <td><?php echo $result['state'];?></td>
+    <td><?php echo $result['telephone'];?></td>
+    <td><?php echo $result['mobile'];?></td>
+    <td><?php echo $result['email'];?></td>
+    <td><?php echo $result['solar_panel'];?></td>
+    <td><?php echo $result['roof_height'];?></td>
+    <td><?php echo $result['service_fee'];?></td>
+    <td><?php echo $result['date_of_service'];?></td>
+    <td><?php echo $result['time_of_service'];?></td>
+    <td><?php echo $result['confirmed'];?></td>
+    <td><?php echo $result['comments'];?></td>
+    <td><a href="UpdateJobs.php?id=<?php echo $result["job_id"];?>">Update</a></td>
+    <td><a href="DeleteJobs.php?id=<?php echo $result["job_id"];?>" onclick="checkdelete()">Delete</a></td>
+</tr>
+<?php
+}
 }
 else
 {
